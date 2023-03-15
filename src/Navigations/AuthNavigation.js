@@ -9,8 +9,21 @@ const Stack = createStackNavigator()
 const AuthNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='home'>
-        <Stack.Screen name='home' component={Home}/>
+      <Stack.Navigator screenOptions={{
+               headerTransparent:true,
+               headerTitle:'',
+               headerTintColor:'white',
+               headerLeftContainerStyle:{
+                width:40,
+                height:40,
+                backgroundColor:'rgba(92,90,91,0.7)',
+                borderRadius:20,
+                alignItems:"center",
+                marginLeft:10,
+                marginTop:1
+               }
+      }} initialRouteName='home'>
+        <Stack.Screen options={{headerShown:false}} name='home' component={Home}/>
         <Stack.Screen name='details' component={NewsDetails}/>
         <Stack.Screen name='list' component={NewsList}/>
       </Stack.Navigator>

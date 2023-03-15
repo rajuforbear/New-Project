@@ -7,7 +7,7 @@ const width=Dimensions.get('window').width
 const SmallCard = ({item}) => {
   const navigation=useNavigation()
   return (
-   <BlockCard onPress={()=>navigation.navigate('details',{item})} item={item} style={styles.container} imageStyle={styles.image}/>
+   <BlockCard onPress={()=>navigation.push('details',{item})} item={item} style={styles.container} imageStyle={styles.image}/>
   )
 }
 

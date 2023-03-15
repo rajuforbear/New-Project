@@ -4,8 +4,7 @@ import Title from './Title'
 import SubTitle from './SubTitler'
 const BlockCard = ({style,imageStyle,item,onPress}) => {
     // const {thumbnail,title, desc}=item
-    console.log(item.thumbnail)
-    
+ 
   return (
 
     <TouchableWithoutFeedback onPress={onPress}>

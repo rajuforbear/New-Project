@@ -11,7 +11,7 @@ const VeticalLust = ({ title, data }) => {
             <Title>{title}</Title>
             <View style={{marginVertical:15}}>
                 {
-                    data.map(item => <FlatCard onPress={()=>navigation.navigate('details',{item})} item={item} key={item.id} />)
+                    data.map(item => <FlatCard onPress={()=>navigation.push('details',{item})} item={item} key={item.id} />)
                 }
             </View>
         </View>
