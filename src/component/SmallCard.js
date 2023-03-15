@@ -1,10 +1,13 @@
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
 import { StyleSheet, Text, View,Dimensions } from 'react-native'
 import BlockCard from './BlockCard'
 const width=Dimensions.get('window').width
+
 const SmallCard = ({item}) => {
+  const navigation=useNavigation()
   return (
-   <BlockCard item={item} style={styles.container} imageStyle={styles.image}/>
+   <BlockCard onPress={()=>navigation.navigate('details',{item})} item={item} style={styles.container} imageStyle={styles.image}/>
   )
 }
 

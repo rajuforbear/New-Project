@@ -1,17 +1,24 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Dimensions,ScrollView,Image } from 'react-native'
+import data from './fakeData'
+import HorizontalList from './HorizontalList'
+import VeticalLust from './VeticalLust'
   const {width,height} =Dimensions.get('window')
 const NewsDetails = (props) => {
 
-    const item= props.route.params.item
-   console.log(item)
+    const items= props.route.params.item
+    const relateNews=data.filter(item => item.category === items.category)
+   
     return (
         <ScrollView>
-           <Image style={styles.img} source={item.thumbnail}/>
+           <Image style={styles.img} source={items.thumbnail}/>
            <View style={styles.containtContainer}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.content}>{item.desc}</Text>
+            <Text style={styles.title}>{items.title}</Text>
+            <Text style={styles.content}>{items.desc}</Text>
+           </View>
+           <View style={{padding:10}}>
+            <VeticalLust title='Related news' data={relateNews} />
            </View>
         </ScrollView>
     )
